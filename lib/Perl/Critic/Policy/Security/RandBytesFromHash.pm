@@ -78,4 +78,46 @@ sub _is_bad_seed_source( $self, $elem ) {
     return 0;
 }
 
+=head1 DESCRIPTION
+
+In the previous century, most operating systems didn't provide a good source of random bytes.
+So people who needed to generate random strings for things like session ids in cookies needed to work around this.
+They used cryptographic hashes around sources of pseudo-random noise, like
+
+     message_digest( rand() + time() + $PID ... )
+
+It seemed good enough. Hashing functions like MD5 or SHA were state-of-the-art and the output looked random.
+That was naive, because the seed values were always predicable:
+
+=over
+
+=item *
+
+Perl's built-in C<rand> only generates is seeded by 32-bits and is predicable enough that the seed can be reverse-engineered after a few iterations.
+
+=item *
+
+The C<time> function is predictable, and is leaked by protocols like HTTP.
+
+=item *
+
+The C<$PID> comes from a small pool of value values, and it's common for child processes (such as workers for a web service) to have sequential ids.
+
+=item *
+
+Perl data structures have predictable reference addresses.
+
+=back
+
+If an attacker can guess most of the seed, they can guess the generated data (which might be a session id in cookie that grants access to a website).
+When you consider cryptanalysis of older algorithms like MD5 or SHA, along with the significant increase and availability of computing power, then this pattern seems to be an elaborate footgun.
+
+Alas, this pattern still shows up in new code, and it remains in some legacy code.
+
+This is a L<Perl::Critic> policy to flag common cases of this.
+
+What can you use instead?  Modules like L<Crypt::URandom>, L<Crypt::SysRandom> or L<Crypt::PRNG>.
+
+=cut
+
 1;
