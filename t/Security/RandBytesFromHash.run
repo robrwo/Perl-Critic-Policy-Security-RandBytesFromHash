@@ -125,3 +125,14 @@ return sha1_sum($$ . steady_time() . rand);
 ## cut
 
 md5_bytes( Time::HiRes::clock_gettime(Time::HiRes::CLOCK_MONOTONIC())  );
+
+## name Object-Signature
+## failures 0
+## cut
+
+sub signature {
+        local $Storable::canonical = 1;
+        Digest::MD5::md5_hex(
+                Storable::nfreeze(shift)
+                );
+}
