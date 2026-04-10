@@ -113,6 +113,10 @@ The C<$PID> comes from a small pool of value values, and it's common for child p
 
 Perl data structures have predictable reference addresses.
 
+=item *
+
+Internal counters have predictable content, as most of the leading digits will not change between invocations.
+
 =back
 
 If an attacker can guess most of the seed, they can guess the generated data (which might be a session id in cookie that grants access to a website).

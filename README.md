@@ -19,6 +19,7 @@ That was naive, because the seed values were always predicable:
 - The `time` function is predictable, and is leaked by protocols like HTTP.
 - The `$PID` comes from a small pool of value values, and it's common for child processes (such as workers for a web service) to have sequential ids.
 - Perl data structures have predictable reference addresses.
+- Internal counters have predictable content, as most of the leading digits will not change between invocations.
 
 If an attacker can guess most of the seed, they can guess the generated data (which might be a session id in cookie that grants access to a website).
 When you consider cryptanalysis of older algorithms like MD5 or SHA, along with the significant increase and availability of computing power, then this pattern seems to be an elaborate footgun.
