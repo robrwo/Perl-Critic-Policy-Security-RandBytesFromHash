@@ -1,5 +1,7 @@
 package Perl::Critic::Policy::Security::RandBytesFromHash;
 
+# ABSTRACT: flag common anti-patterns for generating random bytes
+
 use v5.24;
 use warnings;
 
@@ -9,6 +11,8 @@ use Const::Fast qw( const );
 use List::Util qw( any );
 use Perl::Critic::Utils qw( :severities :classification :ppi );
 use Ref::Util qw( is_plain_arrayref );
+
+# RECOMMEND PREREQ: Ref::Util::XS
 
 our $VERSION = 'v0.1.0';
 
@@ -123,6 +127,20 @@ What can you use instead?  Modules like L<Crypt::URandom>, L<Crypt::SysRandom> o
 =head1 SEE ALSO
 
 L<CPAN Author’s Guide to Random Data for Security|https://security.metacpan.org/docs/guides/random-data-for-security.html>
+
+=head1 prepend:SUPPORT
+
+Only the latest version of this module will be supported.
+
+This module requires Perl v5.24 or later.  Future releases may only support Perl versions released in the last ten
+years.
+
+=head2 Reporting Bugs and Submitting Feature Requests
+
+=head1 append:SUPPORT
+
+If the bug you are reporting has security implications which make it inappropriate to send to a public issue tracker,
+then see F<SECURITY.md> for instructions how to report security vulnerabilities.
 
 =cut
 
