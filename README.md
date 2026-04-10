@@ -46,7 +46,7 @@ Changes for version v0.1.1 (2026-04-10)
 
 - Bugs
     - Specified a minimum version of PPI with signature support.
-    - Internal regexes are stricter.
+    - Restricted internal regexes to ASCII.
 - Documentation
     - Added a SYNOPSIS.
     - Fixed typos.
