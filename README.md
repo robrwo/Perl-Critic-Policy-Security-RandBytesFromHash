@@ -24,7 +24,7 @@ They used cryptographic hashes around sources of pseudo-random noise, like
 It seemed good enough. Hashing functions like MD5 or SHA were state-of-the-art and the output looked random.
 That was naive, because the seed values were always predicable:
 
-- Perl's built-in `rand` only generates is seeded by 32-bits and is predicable enough that the seed can be reverse-engineered after a few iterations.
+- Perl's built-in `rand` is seeded by 32-bits and is predicable enough that the seed can be reverse-engineered after a few iterations.
 - The `time` function is predictable, and is leaked by protocols like HTTP.
 - The `$PID` comes from a small pool of value values, and it's common for child processes (such as workers for a web service) to have sequential ids.
 - Perl data structures have predictable reference addresses.
@@ -49,6 +49,7 @@ Changes for version v0.1.1 (2026-04-10)
     - Internal regexes are stricter.
 - Documentation
     - Added a SYNOPSIS.
+    - Fixed typos.
 - Tests
     - Updated Perl::Critic author tests to apply the policy to itself.
 
@@ -120,7 +121,7 @@ When submitting a bug or request, please include a test-file or a
 patch to an existing test-file that illustrates the bug or desired
 feature.
 
-If the bug you are reporting has security implications which make it inappropriate to send to a public issue tracker,
+If the bug you are reporting has security implications that make it inappropriate to send to a public issue tracker,
 then see `SECURITY.md` for instructions how to report security vulnerabilities.
 
 # SOURCE

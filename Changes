@@ -9,6 +9,8 @@ Revision history for {{ $dist->name }}:
   [Documentation]
   - Added a SYNOPSIS.
 
+  - Fixed typos.
+
   [Tests]
   - Updated Perl::Critic author tests to apply the policy to itself.
 

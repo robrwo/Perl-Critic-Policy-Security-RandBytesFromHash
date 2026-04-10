@@ -107,7 +107,7 @@ That was naive, because the seed values were always predicable:
 
 =item *
 
-Perl's built-in C<rand> only generates is seeded by 32-bits and is predicable enough that the seed can be reverse-engineered after a few iterations.
+Perl's built-in C<rand> is seeded by 32-bits and is predicable enough that the seed can be reverse-engineered after a few iterations.
 
 =item *
 
@@ -159,7 +159,7 @@ years.
 
 =head1 append:SUPPORT
 
-If the bug you are reporting has security implications which make it inappropriate to send to a public issue tracker,
+If the bug you are reporting has security implications that make it inappropriate to send to a public issue tracker,
 then see F<SECURITY.md> for instructions how to report security vulnerabilities.
 
 =cut
