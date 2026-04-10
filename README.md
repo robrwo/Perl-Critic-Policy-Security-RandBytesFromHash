@@ -31,6 +31,15 @@ Anything that looks like the bad sources of randomness outlined above will be fl
 
 What can you use instead?  Modules like [Crypt::URandom](https://metacpan.org/pod/Crypt%3A%3AURandom), [Crypt::SysRandom](https://metacpan.org/pod/Crypt%3A%3ASysRandom) or [Crypt::PRNG](https://metacpan.org/pod/Crypt%3A%3APRNG).
 
+# RECENT CHANGES
+
+Changes for version v0.1.1 (2026-04-10)
+
+- Tests
+    - Updated Perl::Critic author tests to apply the policy to itself.
+
+See the `Changes` file for more details.
+
 # REQUIREMENTS
 
 This module lists the following modules as runtime dependencies:
