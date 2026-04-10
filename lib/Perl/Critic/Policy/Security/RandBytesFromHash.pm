@@ -62,6 +62,8 @@ sub _is_bad_seed_source( $self, $elem ) {
 
     return 1 if $elem eq '$$' && is_perl_global($elem);
 
+    return 1 if $elem =~ /\A \$ (PID|PROCESS_ID) \z/nx && $elem->isa("PPI::Token::Symbol");
+
     return 1 if $elem =~ /\A \{ \s* \} \z/x && $elem->isa("PPI::Structure");
 
     return 1 if $elem =~ /\A \[ \s* \] \z/x && $elem->isa("PPI::Structure");

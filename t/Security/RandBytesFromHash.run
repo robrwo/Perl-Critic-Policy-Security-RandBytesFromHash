@@ -1,5 +1,11 @@
 #!perl
 
+## name md5($PID)
+## failures 1
+## cut
+
+$buff .= sha1( ++$counter, $PID );
+
 ## name md5(time)
 ## failures 1
 ## cut
