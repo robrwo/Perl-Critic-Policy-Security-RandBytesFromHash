@@ -7,17 +7,17 @@ use warnings;
 
 use parent 'Perl::Critic::Policy';
 
-use Const::Fast qw( const );
 use List::Util qw( any );
 use Perl::Critic::Utils qw( :severities :classification :ppi );
+use Readonly 2.01;
 use Ref::Util qw( is_plain_arrayref );
 
 # RECOMMEND PREREQ: Ref::Util::XS
 
 our $VERSION = 'v0.1.0';
 
-const my $DESC => 'random bytes generated using a hash';
-const my $EXPL => 'A hash seeded with poor sources of entropy is still a poor source of entropy, use system entropy instead.';
+Readonly my $DESC => 'random bytes generated using a hash';
+Readonly my $EXPL => 'A hash seeded with poor sources of entropy is still a poor source of entropy, use system entropy instead.';
 
 use experimental qw( signatures );
 
@@ -29,7 +29,7 @@ sub default_themes { return qw( security cpansec ) }
 
 sub applies_to { 'PPI::Token::Word' }
 
-const my $DIGEST_REGEX => qr/\A (
+Readonly my $DIGEST_REGEX => qr/\A (
         ( \w+:: )*
         ( md[2456] | sha( 1 | 224 | 256 ) | digest_data | (hex|b64)?digest(_hash)? | join )
         ( _ ( hex | b64u? | base64 | sum | bytes ) )?

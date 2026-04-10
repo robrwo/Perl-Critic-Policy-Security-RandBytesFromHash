@@ -35,10 +35,10 @@ What can you use instead?  Modules like [Crypt::URandom](https://metacpan.org/po
 
 This module lists the following modules as runtime dependencies:
 
-- [Const::Fast](https://metacpan.org/pod/Const%3A%3AFast)
 - [List::Util](https://metacpan.org/pod/List%3A%3AUtil)
 - [Perl::Critic::Policy](https://metacpan.org/pod/Perl%3A%3ACritic%3A%3APolicy)
 - [Perl::Critic::Utils](https://metacpan.org/pod/Perl%3A%3ACritic%3A%3AUtils)
+- [Readonly](https://metacpan.org/pod/Readonly) version 2.01 or later
 - [Ref::Util](https://metacpan.org/pod/Ref%3A%3AUtil)
 - [experimental](https://metacpan.org/pod/experimental)
 - [parent](https://metacpan.org/pod/parent)
