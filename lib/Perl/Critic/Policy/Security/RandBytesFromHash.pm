@@ -125,8 +125,16 @@ When you consider cryptanalysis of older algorithms like MD5 or SHA, along with 
 Alas, this pattern still shows up in new code, and it remains in some legacy code.
 
 This is a L<Perl::Critic> policy to flag common cases of this.
+Anything that looks like the bad sources of randomness outlined above will be flagged.
 
 What can you use instead?  Modules like L<Crypt::URandom>, L<Crypt::SysRandom> or L<Crypt::PRNG>.
+
+=head1 KNOWN ISSUES
+
+This will identify anything that looks like a hash function or method, or a C<join> with insecure sources in the arguments.
+A side-effect is that some code will be flagged twice, for example
+
+    md5_sum( join("", rand, time, $$ ) )
 
 =head1 SEE ALSO
 

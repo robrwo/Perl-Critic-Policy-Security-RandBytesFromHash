@@ -27,6 +27,7 @@ When you consider cryptanalysis of older algorithms like MD5 or SHA, along with 
 Alas, this pattern still shows up in new code, and it remains in some legacy code.
 
 This is a [Perl::Critic](https://metacpan.org/pod/Perl%3A%3ACritic) policy to flag common cases of this.
+Anything that looks like the bad sources of randomness outlined above will be flagged.
 
 What can you use instead?  Modules like [Crypt::URandom](https://metacpan.org/pod/Crypt%3A%3AURandom), [Crypt::SysRandom](https://metacpan.org/pod/Crypt%3A%3ASysRandom) or [Crypt::PRNG](https://metacpan.org/pod/Crypt%3A%3APRNG).
 
