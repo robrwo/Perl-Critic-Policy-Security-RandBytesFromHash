@@ -32,7 +32,7 @@ sub applies_to { 'PPI::Token::Word' }
 const my $DIGEST_REGEX => qr/\A (
         ( \w+:: )*
         ( md[2456] | sha( 1 | 224 | 256 ) | digest_data | (hex|b64)?digest(_hash)? | join )
-        ( _ ( hex | b64u? | base64 ) )?
+        ( _ ( hex | b64u? | base64 | sum | bytes ) )?
         ) \z/nx;
 
 sub violates ( $self, $elem, $ ) {
@@ -60,7 +60,7 @@ sub _is_bad_seed_source( $self, $elem ) {
     return 0 if $elem->isa("PPI::Token::Whitespace");
 
     return 1
-      if $elem =~ /\A ( (CORE::)?rand | (Time::HiRes::)? (time|gettimeofday|localtime|gmtime) | refaddr ) \z/nx
+      if $elem =~ /\A ( (CORE::)?rand | (Time::HiRes::)? (time|gettimeofday|localtime|gmtime|clock_gettime) | refaddr ) \z/nx
       && ( is_perl_builtin_with_optional_argument($elem)
         || is_function_call($elem) );
 
