@@ -45,6 +45,7 @@ See the `Changes` file for more details.
 This module lists the following modules as runtime dependencies:
 
 - [List::Util](https://metacpan.org/pod/List%3A%3AUtil)
+- [PPI](https://metacpan.org/pod/PPI) version 1.281 or later
 - [Perl::Critic::Policy](https://metacpan.org/pod/Perl%3A%3ACritic%3A%3APolicy)
 - [Perl::Critic::Utils](https://metacpan.org/pod/Perl%3A%3ACritic%3A%3AUtils)
 - [Readonly](https://metacpan.org/pod/Readonly) version 2.01 or later

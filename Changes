@@ -1,6 +1,9 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Bugs]
+  - Specified a minimum version of PPI with signature support.
+
   [Tests]
   - Updated Perl::Critic author tests to apply the policy to itself.
 

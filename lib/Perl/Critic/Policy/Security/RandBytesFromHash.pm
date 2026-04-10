@@ -9,6 +9,7 @@ use parent 'Perl::Critic::Policy';
 
 use List::Util qw( any );
 use Perl::Critic::Utils qw( :severities :classification :ppi );
+use PPI 1.281; # signatures support
 use Readonly 2.01;
 use Ref::Util qw( is_plain_arrayref );
 
