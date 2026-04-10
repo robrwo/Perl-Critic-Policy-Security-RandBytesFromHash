@@ -115,7 +115,7 @@ The C<time> function is predictable, and is leaked by protocols like HTTP.
 
 =item *
 
-The C<$PID> comes from a small pool of value values, and it's common for child processes (such as workers for a web service) to have sequential ids.
+The C<$PID> comes from a small pool of values, and it's common for child processes (such as workers for a web service) to have sequential ids.
 
 =item *
 
