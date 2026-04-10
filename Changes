@@ -4,6 +4,8 @@ Revision history for {{ $dist->name }}:
   [Bugs]
   - Specified a minimum version of PPI with signature support.
 
+  - Restricted internal regexes to ASCII.
+
   [Documentation]
   - Added a SYNOPSIS.
 
