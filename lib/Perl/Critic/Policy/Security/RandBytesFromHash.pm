@@ -78,6 +78,8 @@ sub _is_bad_seed_source( $self, $elem ) {
     return 0;
 }
 
+=encoding utf8
+
 =head1 DESCRIPTION
 
 In the previous century, most operating systems didn't provide a good source of random bytes.
@@ -117,6 +119,10 @@ Alas, this pattern still shows up in new code, and it remains in some legacy cod
 This is a L<Perl::Critic> policy to flag common cases of this.
 
 What can you use instead?  Modules like L<Crypt::URandom>, L<Crypt::SysRandom> or L<Crypt::PRNG>.
+
+=head1 SEE ALSO
+
+L<CPAN Author’s Guide to Random Data for Security|https://security.metacpan.org/docs/guides/random-data-for-security.html>
 
 =cut
 
