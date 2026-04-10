@@ -27,15 +27,13 @@ sub applies_to { 'PPI::Token::Word' }
 
 const my $DIGEST_REGEX => qr/\A (
         ( \w+:: )*
-        ( md[2456] | sha( 1 | 224 | 256 ) | digest_data | join )
+        ( md[2456] | sha( 1 | 224 | 256 ) | digest_data | (hex|b64)?digest(_hash)? | join )
         ( _ ( hex | b64u? | base64 ) )?
         ) \z/nx;
 
 sub violates ( $self, $elem, $ ) {
 
-    # TODO method calls ->(hex|b64)?digest
-
-    if ( $elem =~ $DIGEST_REGEX && is_function_call($elem) )
+    if ( $elem =~ $DIGEST_REGEX && ( is_function_call($elem) || is_method_call($elem) ) )
     {
 
         my @args = parse_arg_list($elem);

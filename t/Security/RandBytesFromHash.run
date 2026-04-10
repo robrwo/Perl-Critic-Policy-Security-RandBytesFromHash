@@ -16,6 +16,12 @@ sha256_base64( {} );
 
 digest_data_hex( [ ] );
 
+## name method calls
+## failures 1
+## cut
+
+$ctx->digest( $PID . localtime . rand . rand );
+
 ## name Ado
 ## failures 1
 ## cut
