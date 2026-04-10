@@ -21,7 +21,7 @@ sub supported_parameters { () }
 
 sub default_severity { $SEVERITY_HIGH }
 
-sub default_themes { 'security' }
+sub default_themes { return qw( security cpansec ) }
 
 sub applies_to { 'PPI::Token::Word' }
 
