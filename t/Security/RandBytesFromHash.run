@@ -92,20 +92,20 @@ return join( '', ++$counter, time, rand, $$, {}, refaddr($self) )
         Digest::SHA::sha1_hex(rand() . $$ . {} . time)
     };
 
-# name Authen-SASL
-## failures 1
+## name Authen-SASL
+## failures 2
 ## cut
 
 cnonce       => md5_hex($CNONCE || join (":", $$, time, rand)),
 
-## Authen-DigestMD5
-## failures 1
+## name Authen-DigestMD5
+## failures 2
 ## cut
 
     $this->{cnonce}=md5_hex(join(':', time, rand, $$))
         unless defined $this->{cnonce};
 
-# Catalyst-Plugin-Session
+## name Catalyst-Plugin-Session
 ## failures 1
 ## cut
 
