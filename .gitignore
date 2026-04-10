@@ -1,0 +1,5 @@
+Perl-Critic-Policy-Security-RandBytesFromHash-*/
+Perl-Critic-Policy-Security-RandBytesFromHash*.tar.gz
+.build/
+local/
+cpanfile.snapshot
