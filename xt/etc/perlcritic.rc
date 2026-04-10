@@ -1,4 +1,4 @@
 ; -*- conf -*-
 
 [Perl::Critic::Policy::Security::RandBytesFromHash]
-severity = 5
+severity = 1
