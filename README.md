@@ -2,6 +2,15 @@
 
 Perl::Critic::Policy::Security::RandBytesFromHash - flag common anti-patterns for generating random bytes
 
+# SYNOPSIS
+
+In your `perlcriticrc` file, add
+
+```
+[Perl::Critic::Policy::Security::RandBytesFromHash]
+severity = 1
+```
+
 # DESCRIPTION
 
 In the previous century, most operating systems didn't provide a good source of random bytes.
@@ -37,6 +46,8 @@ Changes for version v0.1.1 (2026-04-10)
 
 - Bugs
     - Specified a minimum version of PPI with signature support.
+- Documentation
+    - Added a SYNOPSIS.
 - Tests
     - Updated Perl::Critic author tests to apply the policy to itself.
 

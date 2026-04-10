@@ -85,6 +85,13 @@ sub _is_bad_seed_source( $self, $elem ) {
 
 =encoding utf8
 
+=head1 SYNOPSIS
+
+In your F<perlcriticrc> file, add
+
+    [Perl::Critic::Policy::Security::RandBytesFromHash]
+    severity = 1
+
 =head1 DESCRIPTION
 
 In the previous century, most operating systems didn't provide a good source of random bytes.
