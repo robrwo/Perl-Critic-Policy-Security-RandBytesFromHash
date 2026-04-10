@@ -35,6 +35,8 @@ What can you use instead?  Modules like [Crypt::URandom](https://metacpan.org/po
 
 Changes for version v0.1.1 (2026-04-10)
 
+- Bugs
+    - Specified a minimum version of PPI with signature support.
 - Tests
     - Updated Perl::Critic author tests to apply the policy to itself.
 
