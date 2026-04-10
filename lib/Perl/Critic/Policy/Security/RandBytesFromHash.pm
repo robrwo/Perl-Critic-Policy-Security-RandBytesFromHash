@@ -12,8 +12,8 @@ use Ref::Util qw( is_plain_arrayref );
 
 our $VERSION = 'v0.1.0';
 
-use constant DESC => 'random bytes generated using a hash';
-use constant EXPL => 'A hash seeded with poor sources of entropy is still a poor source of entropy, use system entropy instead.';
+const my $DESC => 'random bytes generated using a hash';
+const my $EXPL => 'A hash seeded with poor sources of entropy is still a poor source of entropy, use system entropy instead.';
 
 use experimental qw( signatures );
 
@@ -41,7 +41,7 @@ sub violates ( $self, $elem, $ ) {
         my @args = parse_arg_list($elem);
 
         if ( $self->_is_bad_seed_source( \@args ) ) {
-            return $self->violation( DESC, EXPL, $elem );
+            return $self->violation( $DESC, $EXPL, $elem );
         }
 
     }
