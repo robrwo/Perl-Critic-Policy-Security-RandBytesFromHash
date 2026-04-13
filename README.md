@@ -42,8 +42,10 @@ What can you use instead?  Modules like [Crypt::URandom](https://metacpan.org/po
 
 # RECENT CHANGES
 
-Changes for version v0.1.2 (2026-04-10)
+Changes for version v0.1.2 (2026-04-13)
 
+- Bugs
+    - Removed reliance on anonymous empty structures like {} or \[\] as they lead to too many false positives (GH#1).
 - Documentation
     - Fixed typos.
 

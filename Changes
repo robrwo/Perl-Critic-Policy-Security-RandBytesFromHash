@@ -1,6 +1,9 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Bugs]
+  - Removed reliance on anonymous empty structures like {} or [] as they lead to too many false positives (GH#1).
+
   [Documentation]
   - Fixed typos.
 

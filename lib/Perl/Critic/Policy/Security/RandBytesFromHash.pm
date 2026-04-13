@@ -69,10 +69,6 @@ sub _is_bad_seed_source( $self, $elem ) {
 
     return 1 if $elem =~ /\A \$ (PID|PROCESS_ID) \z/anx && $elem->isa("PPI::Token::Symbol");
 
-    return 1 if $elem =~ /\A \{ \s* \} \z/x && $elem->isa("PPI::Structure");
-
-    return 1 if $elem =~ /\A \[ \s* \] \z/x && $elem->isa("PPI::Structure");
-
     if ( $elem->isa("PPI::Structure") ) {
         return any { $self->_is_bad_seed_source($_) } $elem->children
     }
