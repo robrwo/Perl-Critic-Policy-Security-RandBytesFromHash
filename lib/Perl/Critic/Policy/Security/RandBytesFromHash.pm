@@ -15,7 +15,7 @@ use Ref::Util qw( is_plain_arrayref );
 
 # RECOMMEND PREREQ: Ref::Util::XS
 
-our $VERSION = 'v0.1.2';
+our $VERSION = 'v0.1.3';
 
 Readonly my $DESC => 'random bytes generated using a hash';
 Readonly my $EXPL => 'A hash seeded with poor sources of entropy is still a poor source of entropy, use system entropy instead.';
