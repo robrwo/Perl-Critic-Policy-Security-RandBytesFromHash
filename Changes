@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Tests]
+  - Added test case for false positives (GH#1).
 
 v0.1.2    2026-04-13 15:35:35+01:00 Europe/London
   [Bugs]
