@@ -1,6 +1,9 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Documentation]
+  - Updated author email address due to issues with cpan.org email.
+
   [Tests]
   - Added test case for false positives (GH#1).
 
